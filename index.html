@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#071426" />
+  <title>ORBITA | The Living Health Twin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">O</div><div><b>ORBITA</b><small>MISSION INTELLIGENCE</small></div></div>
+      <div class="side-label">WORKSPACE</div>
+      <button class="nav active" data-target="overview">◈ <span>Overview</span></button>
+      <button class="nav" data-target="analysis">⌁ <span>AI Analysis</span></button>
+      <button class="nav" data-target="forecast">↗ <span>Forecast Lab</span></button>
+      <button class="nav" data-target="history">◷ <span>Mission History</span></button>
+      <div class="side-bottom"><div class="live-dot"></div><span>LOCAL SIMULATION</span><small>NO HARDWARE CONNECTED</small></div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div><div class="eyebrow">SPACE HEALTH INTELLIGENCE / 02</div><h1 id="pageTitle">Mission overview</h1></div>
+        <div class="top-actions"><span class="status"><i></i> SYSTEM ONLINE</span><div class="avatar">OR</div></div>
+      </header>
+
+      <section id="overview" class="page active-page">
+        <div class="hero">
+          <div><div class="eyebrow cyan">THE LIVING HEALTH TWIN</div><h2>See the pattern.<br><em>Understand the change.</em></h2>
+            <p>Multi-model AI screening and simulated mission forecasting — in one software platform.</p>
+            <div class="hero-tags"><span>AI POWERED</span><span>SOFTWARE ONLY</span><span>SYNTHETIC DATA</span></div>
+          </div>
+          <div class="orbit-art"><div class="orbit o1"></div><div class="orbit o2"></div><div class="planet">O</div><div class="satellite">✦</div></div>
+        </div>
+
+        <div class="section-head"><div><div class="eyebrow">MISSION CONTROL</div><h3>Simulation inputs</h3></div><div class="crew">CREW ID <input id="crewId" value="CREW-01" maxlength="40"></div></div>
+        <div class="input-grid">
+          <label>Sleep hours <output id="sleepOut">7.5</output><input id="sleep" type="range" min="0" max="12" step=".5" value="7.5"></label>
+          <label>Activity index <output id="activityOut">76</output><input id="activity" type="range" min="0" max="100" value="76"></label>
+          <label>Stress index <output id="stressOut">25</output><input id="stress" type="range" min="0" max="100" value="25"></label>
+          <label>Radiation index <output id="radiationOut">18</output><input id="radiation" type="range" min="0" max="100" value="18"></label>
+          <label>HR deviation index <output id="hrOut">5</output><input id="hr" type="range" min="0" max="30" value="5"></label>
+          <div class="button-stack"><button class="primary" id="analyzeBtn">Run AI analysis <b>↗</b></button><button class="secondary" id="saveBtn">Save simulation</button></div>
+        </div>
+
+        <div class="section-head"><div><div class="eyebrow">MODEL OUTPUT</div><h3>Health twin snapshot</h3></div><span class="demo-label">DEMO DATA ONLY</span></div>
+        <div class="metrics">
+          <article class="metric"><span>Pattern screening</span><strong id="flagValue">Awaiting run</strong><small>Isolation Forest</small></article>
+          <article class="metric"><span>Pattern group</span><strong id="clusterValue">—</strong><small>K-Means clustering</small></article>
+          <article class="metric"><span>Screening score</span><strong id="scoreValue">—</strong><small>Not a risk probability</small></article>
+        </div>
+        <div class="grid-two">
+          <article class="panel"><div class="panel-head"><div><span class="eyebrow">INPUT PROFILE</span><h3>Current indicators</h3></div><span class="mini-pill">LIVE INPUT</span></div><div id="barChart" class="bars"></div></article>
+          <article class="panel"><div class="panel-head"><div><span class="eyebrow">MODEL EXPLANATION</span><h3>Largest deviations</h3></div></div><div id="explanations" class="explain-list"><p class="muted">Run an analysis to see the largest differences from the synthetic reference centers.</p></div></article>
+        </div>
+        <div class="notice"><b>Research prototype notice</b><span>ORBITA uses synthetic data. A flag means “different from this demo baseline,” not illness, danger, or a medical diagnosis.</span></div>
+      </section>
+
+      <section id="analysis" class="page">
+        <div class="section-head"><div><div class="eyebrow">MULTI-MODEL INTELLIGENCE</div><h3>AI analysis engine</h3></div></div>
+        <div class="model-grid">
+          <article class="model-card"><div class="model-icon">◎</div><h3>Isolation Forest</h3><p>Detects unusual combinations of input values compared with the synthetic training baseline.</p><span>ANOMALY SCREENING</span></article>
+          <article class="model-card"><div class="model-icon">⌁</div><h3>Random Forest</h3><p>Estimates an illustrative next-step pattern from the latest three simulated records.</p><span>TEMPORAL FORECAST</span></article>
+          <article class="model-card"><div class="model-icon">◌</div><h3>K-Means</h3><p>Groups the current profile with similar synthetic patterns for a compact comparison.</p><span>PATTERN GROUPING</span></article>
+        </div>
+        <article class="panel wide-panel"><div class="panel-head"><div><span class="eyebrow">TRANSPARENT OUTPUT</span><h3>How to read the result</h3></div></div>
+          <p class="body-copy">The anomaly model screens for patterns outside its training distribution. K-Means assigns the profile to one of three synthetic clusters. The explanation panel ranks simple feature deviations from demo reference centers. These outputs are descriptive model signals, not causal explanations.</p>
+          <div class="notice"><b>Important</b><span>No medical probability, diagnosis, treatment suggestion, or real astronaut assessment is produced.</span></div>
+        </article>
+      </section>
+
+      <section id="forecast" class="page">
+        <div class="section-head"><div><div class="eyebrow">PREDICTIVE SIMULATION</div><h3>Forecast lab</h3></div><span class="demo-label">ILLUSTRATIVE ONLY</span></div>
+        <article class="panel wide-panel">
+          <div class="panel-head"><div><span class="eyebrow">NEXT-STEP MODEL</span><h3>Generate a demo forecast</h3></div><button class="primary compact" id="forecastBtn">Run forecast ↗</button></div>
+          <p class="body-copy">The forecasting model uses a synthetic sequence dataset. For this demo, the current input profile is repeated as three sequential records. A real temporal model would require properly sampled longitudinal data.</p>
+          <div id="forecastResults" class="forecast-grid"><p class="muted">Run the forecast to see estimated next-step values and illustrative ranges.</p></div>
+          <div class="notice"><b>Forecast limitation</b><span>These are synthetic model outputs, not health predictions. The displayed ranges are illustrative, not calibrated confidence intervals.</span></div>
+        </article>
+      </section>
+
+      <section id="history" class="page">
+        <div class="section-head"><div><div class="eyebrow">LOCAL RECORDS</div><h3>Mission history</h3></div><button class="secondary" id="refreshHistory">Refresh records</button></div>
+        <article class="panel wide-panel"><div id="historyTable" class="table-wrap"><p class="muted">Saved demo records will appear here.</p></div></article>
+      </section>
+
+      <footer>ORBITA © 2026 · EDUCATIONAL SOFTWARE PROTOTYPE · SYNTHETIC DATA ONLY</footer>
+    </main>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
